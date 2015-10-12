@@ -1,6 +1,7 @@
 module.exports = {
 	entry: ["bootstrap-webpack/bootstrap.config.js", './src/index.js'],
 	output: {
+		path: './dist',
 		filename: 'bundle.js'
 	},
 	module: {

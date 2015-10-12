@@ -43,7 +43,17 @@ export default class App extends Component {
 	}
 
 	componentDidUpdate(){
+
+	}
+
+	deleteJob(id){
 		let self = this
+
+		request
+			.del('/kue/job/' + id)
+			.end(function(err, res){
+				console.log(err, res)	
+			})
 
 		request
 			.get('/kue/stats')
@@ -51,14 +61,6 @@ export default class App extends Component {
 				self.setState({
 					kueState: err.body
 				})
-			})
-	}
-
-	deleteJob(id){
-		request
-			.del('/kue/job/' + id)
-			.end(function(err, res){
-				console.log(err, res)	
 			})
 
 		let index;

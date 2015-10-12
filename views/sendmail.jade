@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Form
+  form(action='/sendmail' method='POST')
+    input(type='text' placeholder='Title' name='title')
+    br
+    input(type='text' placeholder='To' name='to')
+    br
+    input(type='text' placeholder='Message' name='message')
+    br
+    button(type='submit') Send
